@@ -13,6 +13,12 @@ const App = () => {
 		currentlyFocusedInput.focus();
 	};
 
+	//code for backspace-not entirely sure what to do next (source: stackoverflow)
+	const backSpace = (e) => {
+		let bsp = document.getElementsByClassName("btn-large").value;
+		document.getElementsByClassName("btn-large").value = bsp.substring(0, bsp.length - 1);
+	};
+
 	return (
 		<div className='App'>
 			<div className='login-form'>
@@ -74,7 +80,7 @@ const App = () => {
 					<button value='B' onClick={buttonHandler}>B</button>
 					<button value='N' onClick={buttonHandler}>N</button>
 					<button value='M' onClick={buttonHandler}>M</button>
-					<button className='btn-large'>Backspace</button>
+					<button className='btn-large' onClick={backSpace}>Backspace</button>
 				</div>
 				<div className='key-row'>
 					<button className='btn-full'></button>
